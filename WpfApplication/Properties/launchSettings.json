@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "WpfApplication": {
+      "commandName": "Project"
+    },
+    "Sync": {
+      "commandName": "Executable",
+      "executablePath": "D:\\work\\WpfApplication\\WpfApplication\\ConsoleApplication\\bin\\Debug\\net10.0\\ConsoleApplication.exe",
+      "commandLineArgs": "sync"
+    },
+    "Telegram": {
+      "commandName": "Executable",
+      "executablePath": "D:\\work\\WpfApplication\\WpfApplication\\ConsoleApplication\\bin\\Debug\\net10.0\\ConsoleApplication.exe",
+      "commandLineArgs": "telegram"
+    }
+  }
+}

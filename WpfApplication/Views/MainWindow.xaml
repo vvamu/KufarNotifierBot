@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfApplication.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kufar.Models;assembly=Kufar"
+        xmlns:vm="clr-namespace:WpfApplication.ViewModels"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="450" Width="800">
+
+    <Grid>
+      
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <DataGrid ItemsSource="{Binding Conversations}"
+          AutoGenerateColumns="False"
+          IsReadOnly="True"
+          CanUserAddRows="False"
+          HeadersVisibility="Column"
+          GridLinesVisibility="Horizontal"
+          HorizontalGridLinesBrush="#EEE"
+          RowBackground="White"
+          AlternatingRowBackground="#F9F9F9"
+          BorderThickness="1"
+          BorderBrush="#DDD">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Subject" 
+                            Binding="{Binding Subject}" 
+                            Width="1*" 
+                            MinWidth="70"/>
+                <DataGridTextColumn Header="Participant" 
+                            Binding="{Binding ParticipantName}" 
+                            Width="0.6*"
+                             MinWidth="70"/>
+                <DataGridTextColumn Header="Last Message" 
+                            Binding="{Binding LastMessagePreview}" 
+                            Width="3*"
+                            MinWidth="70"/>
+                <DataGridTextColumn Header="Time" 
+                            Binding="{Binding LastMessageTimestamp}" 
+                            Width="1*"
+                            MinWidth="70"       />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="1"
+                Content="Отправить сообщение в телеграмм"
+                Command="{Binding SendTelegramMessagesCommand}" />
+        <Button Grid.Row="2"
+                Content="Получить данные из куфар"
+                Command="{Binding KufarUpdateMessagesCommand}" />
+    </Grid>
+</Window>

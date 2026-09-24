@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Libraries/">
+    <Project Path="Kufar/Kufar.csproj" />
+    <Project Path="TelegramSender/Telegram.csproj" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="ConsoleApplication/ConsoleApplication.csproj" Id="13556236-6d11-40f0-818e-f2ecaeade3d3" />
+    <Project Path="WpfApplication/WpfApplication.csproj" />
+  </Folder>
+</Solution>
